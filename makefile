@@ -1,6 +1,6 @@
 SRC_DIR = src/
 
-CFLAGS = -g -Wall -Wextra -std=c11
+CFLAGS = -g -Wall -Wextra -std=c11 -fdiagnostics-color=auto
 LDFLAGS = -lSDL -lSDL_image -lSDL_ttf -lGL -lGLU
 
 MAZE_SOLV = maze_solver
