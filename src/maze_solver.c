@@ -103,29 +103,29 @@ int main( int argc, char **argv ){
 		last_time = current_time;
 
 		/* DRAW */
-		SSDL_Clear(window);
-		draw_map(window, terrain, largeur, terrainLength, lw, lh );
-		draw_bot(window, boy);
-		move_bot(terrain, terrainLength, boy);
-		SSDL_Print(window);
+		SSDL_Clear( window );
+		draw_map( window, terrain, largeur, terrainLength, lw, lh );
+		draw_bot( window, boy );
+		move_bot( terrain, terrainLength, boy );
+		SSDL_Print( window );
 
 		/* END of Loop */
-		ellapsed_time = SDL_GetTicks() - start_time;
-		if (ellapsed_time < PRGM_DELAY){
-			SDL_Delay(PRGM_DELAY - ellapsed_time);
+		ellapsed_time = SDL_GetTicks( ) - start_time;
+		if( ellapsed_time < PRGM_DELAY ){
+			SDL_Delay( PRGM_DELAY - ellapsed_time );
 		}
 	}
 
-	printf("PATH FOUNDED !!!\n");
-	SSDL_Clear(window);
-	draw_map(window, terrain, largeur, terrainLength, lw, lh );
-	draw_bot(window, boy);
-	SSDL_Print(window);
+	printf( "PATH FOUNDED !!!\n" );
+	SSDL_Clear( window );
+	draw_map( window, terrain, largeur, terrainLength, lw, lh );
+	draw_bot( window, boy );
+	SSDL_Print( window );
 	
-	pause();
+	pause( );
 	
-	SSDL_Free(window);
-	quit();
+	SSDL_Free( window );
+	quit( );
 
 	return 0;
 }
