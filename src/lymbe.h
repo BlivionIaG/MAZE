@@ -3,7 +3,7 @@
 
 #include "ssdl.h" 
 #define MAX_VAL 8192
-#define PRGM_DELAY 0
+#define PRGM_DELAY 100
 #define BLOCK_SIZE 8
 
 #define FALSE 0

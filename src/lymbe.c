@@ -168,7 +168,6 @@ void move_bot( char **map, int mapLength, bot *in ){
 	in->right = 0;
 	in->up = 0;
 	in->down = 0;
-	char yep = 0;
 
 	/* Look for free cases */
 	if(in->x - 1 > 0 && map[in->y][in->x-1] == '1' && !already_been_there( in, in->x - 1, in->y ) ) in->left = 1;
@@ -189,28 +188,28 @@ void move_bot( char **map, int mapLength, bot *in ){
 
 
 	/* Look for the end */
-	if( in->x > 0 && map[in->y][in->x-1] == '3' ){
+	if( in->x - 1 > 0 && map[in->y][in->x-1] == '3' ){
 		in->left = 0;
 		printf( "LEFT\n" );
 		bot_nodes_push( in );
 		bot_memory_push( in );
 		in->x--;
 		in->finished = TRUE;
-	}else if( in->x < strlen( map[0] ) && map[in->y][in->x+1] == '3' ) {
+	}else if( in->x + 1 < strlen( map[0] ) && map[in->y][in->x+1] == '3' ) {
 		in->right = 0;
 		printf( "RIGHT\n" );
 		bot_nodes_push( in );
 		bot_memory_push( in );
 		in->x++;
 		in->finished = TRUE;
-	}else if( in->y > 0 && map[in->y-1][in->x] == '3' ){
+	}else if( in->y - 1 > 0 && map[in->y-1][in->x] == '3' ){
 		in->up = 0;
 		printf( "UP\n" );
 		bot_nodes_push( in );
 		bot_memory_push( in );
 		in->y--;
 		in->finished = TRUE;
-	}else if( in->y < mapLength && map[in->y+1][in->x] == '3' ){
+	}else if( in->y + 1 < mapLength && map[in->y+1][in->x] == '3' ){
 		in->down = 0;
 		printf( "DOWN\n" );
 		bot_nodes_push( in );
