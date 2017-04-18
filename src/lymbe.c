@@ -194,28 +194,28 @@ void move_bot( char **map, int mapLength, bot *in ){
 		bot_nodes_push( in );
 		bot_memory_push( in );
 		in->x--;
-		in->finished = TRUE;
+		in->finished = 1;
 	}else if( in->x + 1 < strlen( map[0] ) && map[in->y][in->x+1] == '3' ) {
 		in->right = 0;
 		printf( "RIGHT\n" );
 		bot_nodes_push( in );
 		bot_memory_push( in );
 		in->x++;
-		in->finished = TRUE;
+		in->finished = 1;
 	}else if( in->y - 1 > 0 && map[in->y-1][in->x] == '3' ){
 		in->up = 0;
 		printf( "UP\n" );
 		bot_nodes_push( in );
 		bot_memory_push( in );
 		in->y--;
-		in->finished = TRUE;
+		in->finished = 1;
 	}else if( in->y + 1 < mapLength && map[in->y+1][in->x] == '3' ){
 		in->down = 0;
 		printf( "DOWN\n" );
 		bot_nodes_push( in );
 		bot_memory_push( in );
 		in->y++;
-		in->finished = TRUE;
+		in->finished = 1;
 	}else{
 		/* MOVE */
 		if( in->left ){

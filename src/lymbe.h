@@ -6,9 +6,6 @@
 #define PRGM_DELAY 100
 #define BLOCK_SIZE 8
 
-#define FALSE 0
-#define TRUE 1
-
 /* Struct for coordinates */
 typedef struct bot_coords {
 	int x, y;
