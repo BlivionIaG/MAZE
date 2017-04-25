@@ -111,6 +111,13 @@ void draw_bot( SSDL *in, bot *obj ){
 	SSDL_AddSurface( in, obj->x*obj->wSize, obj->y*obj->hSize, obj->wSize, obj->hSize, obj->color );
 }
 
+void draw_bestPath( SSDL *in, bot *obj ){
+	for( int i = 0; i < obj->length; i++ ){
+			SSDL_AddSurface( in, obj->memory[i].x*obj->wSize, obj->memory[i].y*obj->hSize, obj->wSize, obj->hSize, RED( in ) );
+	}
+	SSDL_AddSurface( in, obj->x*obj->wSize, obj->y*obj->hSize, obj->wSize, obj->hSize, obj->color );
+}
+
 void draw_map( SSDL *in, char **map, int mapWidth, int mapHeight, int wSize, int hSize ){
 	Uint32 color = 0;
 	int i, j;

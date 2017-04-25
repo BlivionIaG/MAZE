@@ -3,7 +3,7 @@
 
 #include "ssdl.h" 
 #define MAX_VAL 8192
-#define PRGM_DELAY 100
+#define PRGM_DELAY 0
 #define BLOCK_SIZE 8
 
 /* Struct for coordinates */
@@ -44,6 +44,7 @@ void bot_nodes_push( bot *in );
 int already_been_there( bot *in, int x, int y );
 int position_in_bot_nodes( bot_memory *nodes, int x, int y );
 void draw_bot( SSDL *in, bot *obj );
+void draw_bestPath( SSDL *in, bot *obj );
 void draw_map( SSDL *in, char **map, int mapWidth, int mapHeight, int wSize, int hSize );
 void move_bot( char **map, int mapLength, bot *in );
 

@@ -92,6 +92,12 @@ int main( int argc, char **argv ){
 							if( lw > 0 ) lw--;
 							if( lh > 0 ) lh--;
 						break;
+						case 'k':
+							while(!boy->finished){
+								move_bot( terrain, terrainLength, boy );
+							}
+							move_bot( terrain, terrainLength, boy );
+						break;
 						default:
 						break;
 					}
@@ -120,6 +126,7 @@ int main( int argc, char **argv ){
 	SSDL_Clear( window );
 	draw_map( window, terrain, largeur, terrainLength, lw, lh );
 	draw_bot( window, boy );
+	draw_bestPath( window, boy );
 	SSDL_Print( window );
 	
 	pause( );
